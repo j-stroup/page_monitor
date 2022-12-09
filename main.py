@@ -31,7 +31,11 @@ def check_sites():
             adding = True
         else:
             adding = False
-    frequency = int(input('How often do you want to check for updates? (Time in seconds) '))
+    try:
+        frequency = int(input('How often do you want to check for updates? (Time in seconds) '))
+    except:
+        print('Please input the number of seconds between update checks.')
+        frequency = int(input('How often do you want to check for updates? (Time in seconds) '))
     for item in urls:
         url = item.strip()
         try:
